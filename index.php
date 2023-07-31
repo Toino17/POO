@@ -1,44 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+</body>
+</html>
+<section>
+    
+<div>
+
 <?php
+include_once 'class/Guerrier.php';
+include_once 'class/Mage.php';
+include_once 'class/Prêtre.php';
+include_once 'class/Archer.php';
 
-include 'class/Utilisateur1.php';
-include 'class/Utilisateur2.php';
-include 'class/Utilisateur3.php';
-
-$moi=new Utilisateur1();
-$thomas=new Utilisateur2();
-$benoit=new Utilisateur3();
-
-echo 'Pseudo: ', $moi->pseudo ,'<br>';
-echo 'Sexe: ', $moi->sexe, '<br>';
-echo 'Age: ', $moi->age, '<br>';
-echo 'Profession: ', $moi->profession, '<br>';
-echo 'Chiffre préféré: ', $moi->chiffrePrefere, '<br>';
-echo 'Citation préférée: ', $moi->citationPreferee, '<br></br>';
-
-echo 'Pseudo: ', $thomas->pseudo ,'<br>';
-echo 'Sexe: ', $thomas->sexe, '<br>';
-echo 'Age: ', $thomas->age, '<br>';
-echo 'Profession: ', $thomas->profession, '<br>';
-echo 'Chiffre préféré: ', $thomas->chiffrePrefere, '<br>';
-echo 'Citation préférée: ', $thomas->citationPreferee, '<br></br>';
-
-echo 'Pseudo: ', $benoit->pseudo ,'<br>';
-echo 'Sexe: ', $benoit->sexe, '<br>';
-echo 'Age: ', $benoit->age, '<br>';
-echo 'Profession: ', $benoit->profession, '<br>';
-echo 'Chiffre préféré: ', $benoit->chiffrePrefere, '<br>';
-echo 'Citation préférée: ', $benoit->citationPreferee, '<br></br>';
-
-$chiffre=$moi->chiffrePrefere;
-$chiffre2=$thomas->chiffrePrefere;
-$chiffre3=$benoit->chiffrePrefere;
-
-$addition=$chiffre+$chiffre2+$chiffre3;
-
-echo 'Addition: ', $addition ,'<br>';
-
-echo $moi->concatinfo();
-echo $thomas->concatinfo();
-echo $benoit->concatinfo();
-
+$guerrier = new Guerrier;
+echo'Guerrier: <br>';
+$guerrier->Carac();
+$mage=new Mage;
+echo 'Mage: <br>';
+$mage->Carac();
+$pretre=new Prêtre;
+echo 'Prêtre: <br>';
+$pretre->Carac();
+$archer=new Archer;
+echo 'Archer: <br>';
+$archer->Carac();
 ?>
+</div>
+<div>
+
+<?php
+echo 'Exo2: <br></br>';
+include_once 'class/Toyota.php';
+$toyotaYaris=new Toyota('Yaris');
+echo 'Test Toyota Yaris:<br></br>';
+echo $toyotaYaris->getInfo();
+echo '<br></br>Test Toyota Corolla:<br></br>';
+$toyotaCorolla=new Toyota('Corolla');
+echo $toyotaCorolla->getInfo();
+?>
+
+</div>
+<div>
+<?php
+echo 'Exo3: Methode Getter // Setter <br></br>';
+echo 'Test Toyota Yaris:<br></br>';
+echo $toyotaYaris->GetMarque().'<br>';
+echo $toyotaYaris->GetAnnée().'<br>';
+echo $toyotaYaris->GetModele().'<br></br>';
+echo 'Test Toyota Corolla:<br></br>';
+echo $toyotaCorolla->GetMarque().'<br>';
+echo $toyotaCorolla->GetAnnée().'<br>';
+echo $toyotaCorolla->GetModele().'<br></br>';
+echo 'Test Setter:<br></br>';
+echo $toyotaYaris->SetMarque('TestSetterMarque').'<br>';
+echo $toyotaYaris->SetAnnée('TestSetterAnnée').'<br>';
+echo $toyotaYaris->SetModèle('testSetterModèle').'<br>';
+?>
+</div>
+</section>
